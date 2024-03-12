@@ -79,4 +79,4 @@ def index():
 
 # Main Execution
 if __name__ == '__main__':
-    app.run(debug=False)  # Disable debug mode in production
+    app.run(debug=False, host='0.0.0.0')  # Disable debug mode in production
