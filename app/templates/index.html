@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-Based Face Authentication Server</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Web-Based Face Authentication Server</h1>
+        <p>A comprehensive guide for the professional edition.</p>
+    </header>
+    <main>
+        <h2>Features</h2>
+        <section>
+            <h3>Enhanced Security</h3>
+            <ul>
+                <li>
+                    Random Folder Generation for Uploads (Hinders Unauthorized Access)
+                </li>
+                <li>
+                    File Validation (Authorized Extensions: JPG, JPEG, PNG, BMP, GIF)
+                </li>
+                <li>Secure File Deletion (Temporary Folders after Processing)</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Robust Face Comparison</h3>
+            <p>
+                Utilizes DeepFace library for deep learning-based facial recognition
+                (Accurate & Reliable Matching)
+            </p>
+        </section>
+        <section>
+            <h3>Error Handling</h3>
+            <p>
+                Graceful exception management during DeepFace operations or file
+                processing.
+            </p>
+        </section>
+        <h2>Usage</h2>
+        <section>
+            <h3>Face Authentication API Route (`/compare`)</h3>
+            <p>
+                POST endpoint for face comparisons between a reference image and a
+                live image.
+            </p>
+            <h4>Request Parameters:</h4>
+            <ul>
+                <li>reference_image (mandatory): The reference image file.</li>
+                <li>live_image (mandatory): The live image file for comparison.</li>
+            </ul>
+            <h4>Response:</h4>
+            <p>
+                JSON object with a single key: `identical` (bool) - Indicates matching
+                faces (`True` for match, `False` otherwise).
+            </p>
+            <h4>Error Handling:</h4>
+            <p>
+                JSON error messages for invalid requests or internal server errors.
+            </p>
+            <ul>
+                <li>400 (Bad Request): Missing fields or invalid file formats.</li>
+                <li>
+                    500 (Internal Server Error): Unexpected errors during processing.
+                </li>
+            </ul>
+        </section>
+        <h2>Development Stack</h2>
+        <section>
+            <p>Built upon a robust foundation of Python libraries:</p>
+            <ul>
+                <li>Flask: Lightweight web framework for creating APIs.</li>
+                <li>
+                    Werkzeug: WSGI utility toolkit (secure file uploads with
+                    `secure_filename`).
+                </li>
+                <li>DeepFace: Deep learning library for facial recognition.</li>
+                <li>
+                    Secrets: Built-in module for generating secure random folder names.
+                </li>
+                <li>OS: Module for file system operations.</li>
+            </ul>
+        </section>
+        <h2>Developer Credit</h2>
+        <p>Developed with love by MUHIT KHAN.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 MUHIT KHAN</p>
+    </footer>
+</body>
+
+</html>
